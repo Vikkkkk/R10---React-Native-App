@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Text, View } from "react-native";
+import { Query } from "react-apollo";
+import About from "./About";
+import gql from "graphql-tag";
 
 export default class AboutContainer extends Component {
   constructor(props) {
@@ -9,9 +12,26 @@ export default class AboutContainer extends Component {
 
   render() {
     return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
+      <Query
+        query={gql`
+          {
+            allConducts {
+              id
+              title
+              description
+              order
+            }
+          }
+        `}
+      >
+        {({ loading, error, data }) => {
+          //   if (loading) return <FullScreenLoader inverted />;
+          //   if (error) return <p>{`Error! ${error.message}`}</p>;
+          console.log(data);
+
+          return <About data={data} />;
+        }}
+      </Query>
     );
   }
 }
