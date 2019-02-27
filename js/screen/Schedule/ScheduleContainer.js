@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Text, View, ActivityIndicator } from "react-native";
 import { Query } from "react-apollo";
-import About from "./About";
 import gql from "graphql-tag";
+import Schedule from "./Schedule";
 
-export default class AboutContainer extends Component {
+import { formatSessionData } from "../../lib/helpers/dataFormatHelpers";
+
+export default class ScheduleContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -15,21 +17,29 @@ export default class AboutContainer extends Component {
       <Query
         query={gql`
           {
-            allConducts {
+            allSessions {
               id
               title
               description
-              order
+              startTime
+              speaker {
+                bio
+                id
+                image
+                name
+                url
+              }
+              location
             }
           }
         `}
       >
         {({ loading, error, data }) => {
           if (loading) return <ActivityIndicator />;
-          if (error) return <p>{`Error! ${error.message}`}</p>;
+          if (error) return <Text>{`Error! ${error.message}`}</Text>;
           console.log(data);
 
-          return <About data={data} />;
+          return <Schedule data={formatSessionData(data.allSessions)} />;
         }}
       </Query>
     );
