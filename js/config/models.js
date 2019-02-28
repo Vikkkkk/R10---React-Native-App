@@ -5,7 +5,7 @@ import { AsyncStorage } from "react-native";
 
 export const setFav = async favId => {
   try {
-    await AsyncStorate.setItem(
+    await AsyncStorage.setItem(
       `${favId}`,
       JSON.stringify({ id: favId, favedOn: new Date() })
     );

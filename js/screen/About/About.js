@@ -10,7 +10,7 @@ class About extends Component {
           style={{}}
           data={this.props.data.allConducts}
           renderItem={({ item }) => {
-            console.log(item);
+            // console.log(item);
             return (
               <View style={{ backgroundColor: "blue" }}>
                 <Text style={{ color: "white", fontSize: 20 }}>

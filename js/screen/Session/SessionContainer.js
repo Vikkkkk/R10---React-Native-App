@@ -3,8 +3,7 @@ import { Text, View, ActivityIndicator } from "react-native";
 import { Query } from "react-apollo";
 import Session from "./Session";
 import gql from "graphql-tag";
-import { formatSessionData } from "../../lib/helpers/dataFormatHelpers";
-
+import FavesContext from "../../context";
 export default class SessionContainer extends Component {
   constructor(props) {
     super(props);
@@ -34,10 +33,19 @@ export default class SessionContainer extends Component {
           console.log(data);
 
           return (
-            <Session
-              data={data.allSpeakers[0]}
-              item={this.props.navigation.getParam("item")}
-            />
+            <FavesContext.Consumer>
+              {({ favIds, setFavId, removeFavId }) => {
+                return (
+                  <Session
+                    speaker={data.allSpeakers[0]}
+                    item={this.props.navigation.getParam("item")}
+                    setFavId={setFavId}
+                    removeFavId={removeFavId}
+                    favIds={favIds}
+                  />
+                );
+              }}
+            </FavesContext.Consumer>
           );
         }}
       </Query>

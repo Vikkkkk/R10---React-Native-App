@@ -17,7 +17,9 @@ class FavesProvider extends Component {
     try {
       const allFaves = await getFaves();
       const favIds = allFaves.map(fav => fav[0]);
+      // if (!favIds.includes("uuid")) {
       this.setState({ favIds });
+      // }
     } catch (error) {
       console.log(error);
     }
