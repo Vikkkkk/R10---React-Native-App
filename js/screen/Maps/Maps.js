@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, FlatList } from "react-native";
-import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import MapView from "react-native-maps";
 import styles from "./styles";
 class Maps extends Component {
   render() {
@@ -8,7 +8,6 @@ class Maps extends Component {
     return (
       <View style={styles.container}>
         <MapView
-          provider={PROVIDER_GOOGLE} // remove if not using Google Maps
           style={styles.map}
           region={{
             latitude: 37.78825,
