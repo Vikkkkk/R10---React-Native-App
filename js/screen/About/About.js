@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, AppRegistry } from "react-native";
+import Collapsible from "../../components/Collapsible/Collapsible";
 
 class About extends Component {
   render() {
@@ -13,13 +14,7 @@ class About extends Component {
             // console.log(item);
             return (
               <View style={{ backgroundColor: "blue" }}>
-                <Text style={{ color: "white", fontSize: 20 }}>
-                  {item.title}
-                </Text>
-                <Text style={{ color: "white" }}>
-                  {item.description}
-                  {item.order}
-                </Text>
+                <Collapsible item={item} />
               </View>
             );
           }}
@@ -31,4 +26,6 @@ class About extends Component {
     );
   }
 }
+
+//AppRegistry.registerComponent("Panels", () => Panels);
 export default About;
