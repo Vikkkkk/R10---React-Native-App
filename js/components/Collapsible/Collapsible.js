@@ -28,12 +28,12 @@ class Collapsible extends Component {
     this.state.rotateValue.setValue(0);
     Animated.timing(this.state.rotateValue, {
       duration: 600,
-      toValue: 360
+      toValue: 1
     }).start();
   };
 
   toggle = () => {
-    LayoutAnimation.easeInEaseOut();
+    LayoutAnimation.spring();
     this.setState({ isOpen: !this.state.isOpen });
     this.animateSpin();
   };
@@ -43,10 +43,8 @@ class Collapsible extends Component {
     const AnimatedIcon = Animated.createAnimatedComponent(Ionicons);
     const rotateIcon = this.state.rotateValue.interpolate({
       inputRange: ["0", "1"],
-      outputRange: ["0deg", "360deg"]
-      // transform: [{ rotate: this.state.rotateValue }]
+      outputRange: ["0deg", "180deg"]
     });
-    // const plusAnimated = { transform: [{ rotate: rotateIcon }] };
 
     return (
       <View style={styles.flatList}>
