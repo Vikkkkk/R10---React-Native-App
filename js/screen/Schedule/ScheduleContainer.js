@@ -9,11 +9,14 @@ import FavesContext from "../../context";
 import { formatSessionData } from "../../lib/helpers/dataFormatHelpers";
 
 export default class ScheduleContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
+  static navigationOptions = {
+    title: "Schedule",
+    headerTintColor: "white",
+    headerTitleStyle: {
+      fontSize: 22
+      // fontFamily: fonts.regular
+    }
+  };
   render() {
     return (
       <Query

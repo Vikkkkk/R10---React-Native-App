@@ -5,11 +5,14 @@ import About from "./About";
 import gql from "graphql-tag";
 
 export default class AboutContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
+  static navigationOptions = {
+    title: "About",
+    headerTintColor: "white",
+    headerTitleStyle: {
+      fontSize: 22
+      // fontFamily: fonts.regular
+    }
+  };
   render() {
     return (
       <Query

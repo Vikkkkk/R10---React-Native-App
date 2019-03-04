@@ -22,7 +22,13 @@ const styles = StyleSheet.create({
     // paddingBottom: 10
   },
   title: { fontSize: 24, fontWeight: "700", paddingBottom: 20 },
-  description: { fontSize: 14, fontWeight: "400", paddingBottom: 20 }
+  description: { fontSize: 14, fontWeight: "400", paddingBottom: 20 },
+  flatlist: {
+    paddingBottom: 30,
+    borderBottomColor: "grey",
+    borderBottomWidth: 0.5
+  },
+  copyright: { fontSize: 22, paddingBottom: 8, paddingTop: 8 }
 });
 // the one below also works without the spread it depends on what you have for ios:{} and adroid:{}
 // const styles = StyleSheet.create({

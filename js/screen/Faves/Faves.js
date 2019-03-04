@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { View, Text, SectionList, TouchableHighlight } from "react-native";
 import { withNavigation } from "react-navigation";
 import Icon from "react-native-vector-icons/Ionicons";
+import styles from "./styles";
+import moment from "moment";
 
 class Faves extends Component {
   render() {
@@ -10,9 +12,10 @@ class Faves extends Component {
       <SectionList
         sections={this.props.sessions}
         renderItem={({ item }) => {
-          console.log(">>>>>>", item);
+          // console.log(">>>>>>", item);
           return (
             <TouchableHighlight
+              style={styles.touchableHighlight}
               onPress={() => {
                 if (!item.speaker) {
                   this.props.navigation.navigate("", {});
@@ -24,14 +27,14 @@ class Faves extends Component {
                 }
               }}
             >
-              <View>
+              <View style={styles.scheduleContainer}>
                 <View>
-                  <Text style={{ color: "blue" }}>{item.title}</Text>
-                  <Text style={{ color: "blue" }}>{item.location}</Text>
+                  <Text style={styles.title}>{item.title}</Text>
                 </View>
-                <View>
+                <View style={styles.locationContainer}>
+                  <Text style={styles.location}>{item.location}</Text>
                   {this.props.favId.includes(item.id) && (
-                    <Icon name="ios-heart" size={40} color="red" />
+                    <Icon name="ios-heart" size={20} color="red" />
                   )}
                 </View>
               </View>
@@ -39,7 +42,7 @@ class Faves extends Component {
           );
         }}
         renderSectionHeader={({ section: { title } }) => {
-          return <Text style={{ color: "red" }}>{title}</Text>;
+          return <Text style={styles.time}>{moment(title).format("LT")}</Text>;
         }}
         keyExtractor={item => item.id}
       />

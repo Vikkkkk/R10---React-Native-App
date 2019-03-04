@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, FlatList, Image } from "react-native";
+import { View, Text, FlatList, Image, ScrollView } from "react-native";
 import Collapsible from "../../components/Collapsible/Collapsible";
 import styles from "./styles";
 class About extends Component {
   render() {
     console.log(this.props);
     return (
-      <View>
+      <ScrollView>
         <View style={styles.logoContainer}>
           <Image
             style={styles.logo}
@@ -25,22 +25,25 @@ class About extends Component {
           </Text>
           <Text style={styles.title}>Code of Conduct</Text>
         </View>
-        <FlatList
-          data={this.props.data.allConducts}
-          renderItem={({ item }) => {
-            // console.log(item);
-            return (
-              <View>
-                <Collapsible item={item} />
-              </View>
-            );
-          }}
-          keyExtractor={(item, index) => item.id}
-          //   ItemSeparatorComponent={() => {
-          //     return;
-          //   }}
-        />
-      </View>
+        <View style={styles.flatlist}>
+          <FlatList
+            data={this.props.data.allConducts}
+            renderItem={({ item }) => {
+              // console.log(item);
+              return (
+                <View>
+                  <Collapsible item={item} />
+                </View>
+              );
+            }}
+            keyExtractor={(item, index) => item.id}
+            //   ItemSeparatorComponent={() => {
+            //     return;
+            //   }}
+          />
+        </View>
+        <Text style={styles.copyright}>ⒸDigital Salami 2019</Text>
+      </ScrollView>
     );
   }
 }
