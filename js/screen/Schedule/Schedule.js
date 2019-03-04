@@ -10,7 +10,7 @@ class Schedule extends Component {
       <SectionList
         sections={this.props.sessions}
         renderItem={({ item }) => {
-          console.log(">>>>>>", item);
+          // console.log(">>>>>>", item);
           return (
             <TouchableHighlight
               onPress={() => {

@@ -27,13 +27,13 @@ class Collapsible extends Component {
   animateSpin = () => {
     this.state.rotateValue.setValue(0);
     Animated.timing(this.state.rotateValue, {
-      duration: 600,
+      duration: 300,
       toValue: 1
     }).start();
   };
 
   toggle = () => {
-    LayoutAnimation.spring();
+    LayoutAnimation.easeInEaseOut();
     this.setState({ isOpen: !this.state.isOpen });
     this.animateSpin();
   };
