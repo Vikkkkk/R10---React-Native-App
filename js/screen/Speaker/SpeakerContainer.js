@@ -6,11 +6,6 @@ import gql from "graphql-tag";
 import Session from "../Session";
 
 export default class SpeakerContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return <Speaker navigation={this.props.navigation} />;
   }

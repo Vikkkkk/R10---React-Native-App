@@ -10,6 +10,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     paddingBottom: 10,
     paddingTop: 5
+  },
+  icon: {
+    padingRight: 10,
+    color: "#9963ea"
   }
 });
 

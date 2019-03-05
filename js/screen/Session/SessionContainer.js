@@ -5,10 +5,14 @@ import Session from "./Session";
 import gql from "graphql-tag";
 import FavesContext from "../../context";
 export default class SessionContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  static navigationOptions = {
+    title: "Session",
+    headerTintColor: "white",
+    headerTitleStyle: {
+      fontSize: 22
+      // fontFamily: fonts.regular
+    }
+  };
 
   render() {
     console.log(this.props.navigation);

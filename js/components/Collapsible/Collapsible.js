@@ -74,7 +74,12 @@ class Collapsible extends Component {
             <View style={{ flexDirection: "row" }}>
               <View>
                 <Animated.View style={{ transform: [{ rotate: rotateIcon }] }}>
-                  <Ionicons name={"ios-add"} style={styles.bullet} size={20} />
+                  <Ionicons
+                    style={styles.icon}
+                    name={"ios-add"}
+                    style={styles.bullet}
+                    size={20}
+                  />
                 </Animated.View>
               </View>
               <Text style={styles.listTitle}>{item.title}</Text>

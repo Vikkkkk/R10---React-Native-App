@@ -1,8 +1,8 @@
 import { Platform, StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   logoContainer: {
-    marginLeft: "10%",
-    width: "80%",
+    // marginLeft: "10%",
+    // width: "90%",
     paddingTop: 20,
     paddingBottom: 20,
     borderBottomColor: "grey",
@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
     height: 50
   },
   textContainer: {
-    paddingLeft: 10,
-    paddingRight: 10,
+    // paddingLeft: 10,
+    // paddingRight: 10,
     paddingTop: 20
     // paddingBottom: 10
   },
@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
     borderBottomColor: "grey",
     borderBottomWidth: 0.5
   },
-  copyright: { fontSize: 22, paddingBottom: 8, paddingTop: 8 }
+  copyright: { fontSize: 22, paddingBottom: 8, paddingTop: 8 },
+  overallContainer: { paddingLeft: 10, paddingRight: 10 }
 });
 // the one below also works without the spread it depends on what you have for ios:{} and adroid:{}
 // const styles = StyleSheet.create({
