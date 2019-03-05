@@ -1,4 +1,5 @@
 import { Platform, StyleSheet } from "react-native";
+import { Font } from "../../config/styles";
 const styles = StyleSheet.create({
   name: {
     ...Platform.select({
@@ -29,48 +30,52 @@ const styles = StyleSheet.create({
     color: "black",
     fontWeight: "500",
     fontSize: 30,
-    paddingBottom: 10
+    paddingBottom: 15,
+    fontFamily: Font.reg
   },
   description: {
+    fontFamily: Font.light,
     color: "black",
     fontSize: 24,
-    lineHeight: 30
+    fontWeight: "300",
+    lineHeight: 30,
+    width: "100%"
   },
   time: {
-    paddingBottom: 10,
+    paddingBottom: 15,
     color: "red",
-    fontSize: 18
+    fontSize: 18,
+    fontFamily: Font.reg
   },
   speakerImage: {
-    borderRadius: 50,
-    height: 100,
-    width: 100
+    borderRadius: 40,
+    height: 80,
+    width: 80
   },
   linearGradient: {
-    width: 300,
-    height: 40,
-    borderRadius: 50
+    width: 250,
+    height: 50,
+    borderRadius: 50,
+    alignItems: "center",
+    justifyContent: "center"
   },
   buttontxt: {
     color: "white",
     fontSize: 18,
-    textAlign: "center",
-    paddingTop: 10
+    textAlign: "center"
   },
   speakerInfo: {
     flexDirection: "row",
     alignItems: "center",
     borderBottomWidth: 0.5,
     borderBottomColor: "lightgrey",
-    paddingBottom: 10
+    paddingBottom: 20
   },
-  button: {
-    paddingTop: 25,
-    marginLeft: "10%"
-  },
+  button: {},
   buttonContainer: {
+    paddingTop: 40,
     flex: 1,
-    width: "100%",
+    flexDirection: "row",
     justifyContent: "center"
   },
   txt: {
@@ -82,9 +87,10 @@ const styles = StyleSheet.create({
   },
   name: {
     color: "black",
-    fontSize: 18,
-    paddingLeft: 10,
-    fontWeight: "bold"
+    fontSize: 22,
+    paddingLeft: 13,
+    fontWeight: "bold",
+    fontFamily: Font.reg
   }
 });
 // the one below also works without the spread it depends on what you have for ios:{} and adroid:{}

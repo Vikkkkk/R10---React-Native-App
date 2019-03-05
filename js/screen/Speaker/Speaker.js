@@ -6,7 +6,8 @@ import {
   Button,
   Linking,
   TouchableHighlight,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import styles from "./styles";
@@ -32,9 +33,9 @@ class Speaker extends Component {
             />
           </TouchableHighlight>
           <Text style={styles.header}> About the Speaker</Text>
-          <View />
         </View>
-        <View style={styles.contentContainer}>
+
+        <ScrollView style={styles.contentContainer}>
           <View style={styles.speakerInfo}>
             <View style={{ paddingTop: 20 }}>
               <Image
@@ -57,7 +58,7 @@ class Speaker extends Component {
               }
             >
               <LinearGradient
-                colors={["#cf392a", "#9963ea"]}
+                colors={["#9963ea", "#8797D6"]}
                 start={{ x: 0.0, y: 0.0 }}
                 end={{ x: 1.0, y: 0.0 }}
                 style={styles.linearGradient}
@@ -66,7 +67,7 @@ class Speaker extends Component {
               </LinearGradient>
             </TouchableOpacity>
           </View>
-        </View>
+        </ScrollView>
       </View>
     );
   }

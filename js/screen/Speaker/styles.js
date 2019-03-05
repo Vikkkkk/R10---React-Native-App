@@ -47,22 +47,24 @@ const styles = StyleSheet.create({
     lineHeight: 30,
     width: "92%"
   },
-  button: { paddingTop: 25 },
+  button: {},
   buttonContainer: {
     flex: 1,
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "center",
+    paddingTop: 20
+    // alignItems: "center"
   },
   linearGradient: {
-    width: 300,
-    height: 40,
-    borderRadius: 50
+    width: 250,
+    height: 50,
+    borderRadius: 50,
+    justifyContent: "center"
   },
   buttontxt: {
     color: "white",
     fontSize: 18,
-    textAlign: "center",
-    paddingTop: 10
+    textAlign: "center"
   }
 });
 

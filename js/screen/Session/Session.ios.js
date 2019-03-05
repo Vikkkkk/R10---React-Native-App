@@ -93,7 +93,7 @@ class Session extends Component {
               }}
             >
               <LinearGradient
-                colors={["#cf392a", "#9963ea"]}
+                colors={["#9963ea", "#8797D6"]}
                 start={{ x: 0.0, y: 0.0 }}
                 end={{ x: 1.0, y: 0.0 }}
                 style={styles.linearGradient}

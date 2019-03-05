@@ -1,14 +1,19 @@
 import { Platform, StyleSheet } from "react-native";
+import { Font } from "../../config/styles";
 const styles = StyleSheet.create({
   time: {
     backgroundColor: "lightgrey",
     paddingTop: 5,
     paddingBottom: 5,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    paddingLeft: 15,
+    fontFamily: Font.reg
   },
   touchableHighlight: {
     borderBottomWidth: 0.5,
-    borderBottomColor: "lightgrey"
+    borderBottomColor: "lightgrey",
+    paddingLeft: 15,
+    paddingRight: 15
   },
   scheduleContainer: {
     flex: 1,
@@ -21,14 +26,16 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   title: {
-    fontSize: 22,
+    fontFamily: Font.reg,
+    fontSize: 20,
     color: "black",
     paddingBottom: 7
   },
   location: {
     fontSize: 18,
     color: "grey",
-    flex: 2
+    flex: 2,
+    fontFamily: Font.reg
   }
 });
 

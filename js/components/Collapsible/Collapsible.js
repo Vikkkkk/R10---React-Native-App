@@ -33,7 +33,7 @@ class Collapsible extends Component {
   };
 
   toggle = () => {
-    LayoutAnimation.easeInEaseOut();
+    LayoutAnimation.spring();
     this.setState({ isOpen: !this.state.isOpen });
     this.animateSpin();
   };
@@ -75,10 +75,10 @@ class Collapsible extends Component {
               <View>
                 <Animated.View style={{ transform: [{ rotate: rotateIcon }] }}>
                   <Ionicons
-                    style={styles.icon}
                     name={"ios-add"}
                     style={styles.bullet}
                     size={20}
+                    color={"#9963ea"}
                   />
                 </Animated.View>
               </View>
