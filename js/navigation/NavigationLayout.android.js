@@ -12,6 +12,7 @@ import ScheduleScreen from "../screen/Schedule";
 import SessionScreen from "../screen/Session";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { sharedNavigationOptions } from "./config";
+import { Dimensions } from "react-native";
 
 const ScheduleStack = createStackNavigator(
   {
@@ -64,6 +65,8 @@ export default createDrawerNavigator(
     About: { screen: AboutStack }
   },
   {
+    drawerWidth: Dimensions.get("window").width / 2,
+
     defaultNavigationOptions: ({ navigation }) => ({
       drawerIcon: ({ focused, horizontal, tintColor }) => {
         const { routeName } = navigation.state;
@@ -80,8 +83,8 @@ export default createDrawerNavigator(
         return <Ionicons name={iconName} size={30} color={tintColor} />;
       }
     }),
-    tabBarOptions: {
-      activeTintColor: "#fff",
+    contentOptions: {
+      activeTintColor: "#9963ea",
       inactiveTintColor: "#999",
       labelStyle: {
         fontSize: 10,

@@ -53,16 +53,36 @@ const styles = StyleSheet.create({
     width: 80
   },
   linearGradient: {
-    width: 250,
-    height: 50,
-    borderRadius: 50,
-    alignItems: "center",
-    justifyContent: "center"
+    ...Platform.select({
+      ios: {
+        width: 250,
+        height: 50,
+        borderRadius: 50,
+        alignItems: "center",
+        justifyContent: "center"
+      },
+      android: {
+        width: 250,
+        height: 50,
+        borderRadius: 50,
+        alignItems: "center",
+        justifyContent: "center"
+      }
+    })
   },
   buttontxt: {
-    color: "white",
-    fontSize: 18,
-    textAlign: "center"
+    ...Platform.select({
+      ios: {
+        color: "white",
+        fontSize: 18,
+        textAlign: "center"
+      },
+      android: {
+        color: "white",
+        fontSize: 18,
+        textAlign: "center"
+      }
+    })
   },
   speakerInfo: {
     flexDirection: "row",
@@ -71,12 +91,22 @@ const styles = StyleSheet.create({
     borderBottomColor: "lightgrey",
     paddingBottom: 20
   },
-  button: {},
+
   buttonContainer: {
-    paddingTop: 40,
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "center"
+    ...Platform.select({
+      ios: {
+        paddingTop: 40,
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center"
+      },
+      android: {
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center",
+        paddingTop: 40
+      }
+    })
   },
   txt: {
     color: "grey",
