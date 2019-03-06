@@ -3,23 +3,19 @@ import {
   View,
   Text,
   TouchableHighlight,
-  Button,
   Platform,
   Image,
-  TouchableOpacity,
-  StyleSheet
+  TouchableOpacity
 } from "react-native";
 import { withNavigation } from "react-navigation";
 import Icon from "react-native-vector-icons/Ionicons";
 import styles from "./styles";
 import moment from "moment";
 import LinearGradient from "react-native-linear-gradient";
+import PropTypes from "prop-types";
 
 class Session extends Component {
   render() {
-    console.log(this.props.speaker.name);
-    console.log(this.props);
-
     return (
       <View style={styles.overallContainer}>
         <View style={styles.locationContainer}>
@@ -89,7 +85,6 @@ class Session extends Component {
           <TouchableOpacity
             style={styles.buttonContainer}
             onPress={() => {
-              console.log("bye");
               this.props.removeFavId(this.props.item.id);
             }}
           >
@@ -110,7 +105,6 @@ class Session extends Component {
           <TouchableOpacity
             style={styles.buttonContainer}
             onPress={() => {
-              console.log("hi");
               this.props.setFavId(this.props.item.id);
             }}
           >
@@ -131,17 +125,13 @@ class Session extends Component {
     );
   }
 }
+Session.propTypes = {
+  item: PropTypes.object.isRequired,
+  favIds: PropTypes.array.isRequired,
+  navigation: PropTypes.object.isRequired,
+  removeFavId: PropTypes.func.isRequired,
+  setFavId: PropTypes.func.isRequired,
+  speaker: PropTypes.object.isRequired
+};
 
 export default withNavigation(Session);
-
-{
-  /* <Button
-onPress={() => {
-  console.log("hiby");
-  this.props.setFavId(this.props.item.id);
-}}
-title="Add to Faves"
-color="#841584"
-accessibilityLabel="Favourite it"
-/> */
-}

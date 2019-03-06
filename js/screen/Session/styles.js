@@ -75,12 +75,14 @@ const styles = StyleSheet.create({
       ios: {
         color: "white",
         fontSize: 18,
-        textAlign: "center"
+        textAlign: "center",
+        fontFamily: Font.reg
       },
       android: {
         color: "white",
         fontSize: 18,
-        textAlign: "center"
+        textAlign: "center",
+        fontFamily: Font.reg
       }
     })
   },
@@ -101,10 +103,10 @@ const styles = StyleSheet.create({
         justifyContent: "center"
       },
       android: {
-        flex: 1,
+        flex: 0,
         flexDirection: "row",
         justifyContent: "center",
-        paddingTop: 40
+        paddingTop: 20
       }
     })
   },

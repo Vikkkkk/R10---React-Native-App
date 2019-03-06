@@ -3,7 +3,6 @@ import {
   View,
   Text,
   Image,
-  Button,
   Linking,
   TouchableHighlight,
   TouchableOpacity,
@@ -12,10 +11,9 @@ import {
 import Icon from "react-native-vector-icons/Ionicons";
 import styles from "./styles";
 import LinearGradient from "react-native-linear-gradient";
+import PropTypes from "prop-types";
 class Speaker extends Component {
   render() {
-    console.log(this.props.navigation.getParam("image"));
-
     return (
       <View style={styles.overallContainer}>
         <View style={styles.xcontainer}>
@@ -25,12 +23,7 @@ class Speaker extends Component {
               this.props.navigation.goBack();
             }}
           >
-            <Icon
-              // style={styles.xicon}
-              name="ios-close"
-              size={40}
-              color="white"
-            />
+            <Icon name="ios-close" size={40} color="white" />
           </TouchableHighlight>
           <Text style={styles.header}> About the Speaker</Text>
         </View>
@@ -72,5 +65,9 @@ class Speaker extends Component {
     );
   }
 }
+
+Speaker.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 
 export default Speaker;

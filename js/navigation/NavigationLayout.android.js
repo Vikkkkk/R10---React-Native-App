@@ -1,9 +1,4 @@
-import {
-  createStackNavigator,
-  createDrawerNavigator,
-  createAppContainer,
-  createBottomTabNavigator
-} from "react-navigation";
+import { createStackNavigator, createDrawerNavigator } from "react-navigation";
 import React from "react";
 import AboutScreen from "../screen/About";
 import MapScreen from "../screen/Maps";

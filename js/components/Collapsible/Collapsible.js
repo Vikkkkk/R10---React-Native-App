@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import {
   View,
   Text,
@@ -33,14 +34,13 @@ class Collapsible extends Component {
   };
 
   toggle = () => {
-    LayoutAnimation.spring();
+    LayoutAnimation.easeInEaseOut();
     this.setState({ isOpen: !this.state.isOpen });
     this.animateSpin();
   };
 
   render() {
     const { item } = this.props;
-    const AnimatedIcon = Animated.createAnimatedComponent(Ionicons);
     const rotateIcon = this.state.rotateValue.interpolate({
       inputRange: ["0", "1"],
       outputRange: ["0deg", "180deg"]
@@ -90,5 +90,9 @@ class Collapsible extends Component {
     );
   }
 }
+
+Collapsible.propTypes = {
+  item: PropTypes.object.isRequired
+};
 
 export default Collapsible;

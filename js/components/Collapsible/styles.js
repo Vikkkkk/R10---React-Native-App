@@ -1,4 +1,4 @@
-import { Platform, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import { Font } from "../../config/styles";
 const styles = StyleSheet.create({
   listTitle: {

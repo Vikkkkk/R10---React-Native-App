@@ -44,7 +44,6 @@ class FavesProvider extends Component {
   };
 
   render() {
-    console.log("hhihiihi");
     return (
       <FavesContext.Provider
         value={{

@@ -8,7 +8,9 @@ const GradientHeader = props => (
   <View
     style={{
       backgroundColor: "white",
-      overflow: "hidden"
+      overflow: "hidden",
+      justifyContent: "center",
+      height: 80
     }}
   >
     <LinearGradient

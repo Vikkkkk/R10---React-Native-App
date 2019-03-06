@@ -4,15 +4,14 @@ import { withNavigation } from "react-navigation";
 import Icon from "react-native-vector-icons/Ionicons";
 import styles from "./styles";
 import moment from "moment";
+import PropTypes from "prop-types";
 
 class Faves extends Component {
   render() {
-    console.log(this.props);
     return (
       <SectionList
         sections={this.props.sessions}
         renderItem={({ item }) => {
-          // console.log(">>>>>>", item);
           return (
             <TouchableHighlight
               style={styles.touchableHighlight}
@@ -49,5 +48,11 @@ class Faves extends Component {
     );
   }
 }
+
+Faves.propTypes = {
+  sessions: PropTypes.array.isRequired,
+  favId: PropTypes.array.isRequired,
+  navigation: PropTypes.object.isRequired
+};
 
 export default withNavigation(Faves);

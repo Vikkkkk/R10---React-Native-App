@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, ActivityIndicator } from "react-native";
+import { ActivityIndicator } from "react-native";
 import { Query } from "react-apollo";
 import About from "./About";
 import gql from "graphql-tag";
@@ -10,7 +10,6 @@ export default class AboutContainer extends Component {
     headerTintColor: "white",
     headerTitleStyle: {
       fontSize: 22
-      // fontFamily: fonts.regular
     }
   };
   render() {
@@ -30,7 +29,6 @@ export default class AboutContainer extends Component {
         {({ loading, error, data }) => {
           if (loading) return <ActivityIndicator />;
           if (error) return <p>{`Error! ${error.message}`}</p>;
-          console.log(data);
 
           return <About data={data} />;
         }}

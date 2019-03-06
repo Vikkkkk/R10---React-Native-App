@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { View, Text, FlatList, Image, ScrollView } from "react-native";
 import Collapsible from "../../components/Collapsible/Collapsible";
 import styles from "./styles";
+import PropTypes from "prop-types";
 class About extends Component {
   render() {
-    console.log(this.props);
     return (
       <View style={styles.overallContainer}>
         <ScrollView>
@@ -30,7 +30,6 @@ class About extends Component {
             <FlatList
               data={this.props.data.allConducts}
               renderItem={({ item }) => {
-                // console.log(item);
                 return (
                   <View>
                     <Collapsible item={item} />
@@ -38,9 +37,6 @@ class About extends Component {
                 );
               }}
               keyExtractor={(item, index) => item.id}
-              //   ItemSeparatorComponent={() => {
-              //     return;
-              //   }}
             />
           </View>
           <Text style={styles.copyright}>ⒸDigital Salami 2019</Text>
@@ -49,6 +45,8 @@ class About extends Component {
     );
   }
 }
+About.propTypes = {
+  data: PropTypes.object.isRequired
+};
 
-//AppRegistry.registerComponent("Panels", () => Panels);
 export default About;

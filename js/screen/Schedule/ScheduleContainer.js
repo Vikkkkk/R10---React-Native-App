@@ -42,7 +42,6 @@ export default class ScheduleContainer extends Component {
         {({ loading, error, data }) => {
           if (loading) return <ActivityIndicator />;
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
-          console.log(data);
 
           return (
             <FavesContext.Consumer>

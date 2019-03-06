@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { View, Text, FlatList } from "react-native";
+import { View } from "react-native";
 import MapView from "react-native-maps";
 import styles from "./styles";
 
 class Maps extends Component {
   render() {
-    console.log(this.props);
     return (
       <View style={styles.container}>
         <MapView

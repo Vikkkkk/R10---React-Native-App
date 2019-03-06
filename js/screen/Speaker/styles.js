@@ -1,4 +1,5 @@
-import { Platform, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
+import { Font } from "../../config/styles";
 const styles = StyleSheet.create({
   overallContainer: {
     backgroundColor: "black",
@@ -64,7 +65,8 @@ const styles = StyleSheet.create({
   buttontxt: {
     color: "white",
     fontSize: 18,
-    textAlign: "center"
+    textAlign: "center",
+    fontFamily: Font.reg
   }
 });
 

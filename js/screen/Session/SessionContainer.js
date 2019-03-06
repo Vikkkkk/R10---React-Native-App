@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, ActivityIndicator } from "react-native";
+import { Text, ActivityIndicator } from "react-native";
 import { Query } from "react-apollo";
 import Session from "./Session";
 import gql from "graphql-tag";
@@ -10,12 +10,10 @@ export default class SessionContainer extends Component {
     headerTintColor: "white",
     headerTitleStyle: {
       fontSize: 22
-      // fontFamily: fonts.regular
     }
   };
 
   render() {
-    console.log(this.props.navigation);
     const id = this.props.navigation.getParam("id");
     return (
       <Query
@@ -34,7 +32,6 @@ export default class SessionContainer extends Component {
         {({ loading, error, data }) => {
           if (loading) return <ActivityIndicator />;
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
-          console.log(data);
 
           return (
             <FavesContext.Consumer>

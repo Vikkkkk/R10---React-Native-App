@@ -1,6 +1,5 @@
 import {
   createStackNavigator,
-  createAppContainer,
   createBottomTabNavigator
 } from "react-navigation";
 import React from "react";
@@ -66,7 +65,7 @@ export default createBottomTabNavigator(
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         const { routeName } = navigation.state;
-        let IconComponent = Ionicons;
+
         let iconName;
         if (routeName === "Schedule") {
           iconName = `ios-calendar`;

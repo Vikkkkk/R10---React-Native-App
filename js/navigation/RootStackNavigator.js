@@ -14,11 +14,3 @@ export default createAppContainer(
     }
   )
 );
-
-// const AppNavigator = createStackNavigator({
-//   About: {
-//     screen: About
-//   }
-// });
-
-// export default createAppContainer(AppNavigator);
