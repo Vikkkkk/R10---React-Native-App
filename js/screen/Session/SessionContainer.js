@@ -4,6 +4,7 @@ import { Query } from "react-apollo";
 import Session from "./Session";
 import gql from "graphql-tag";
 import FavesContext from "../../context";
+
 export default class SessionContainer extends Component {
   static navigationOptions = {
     title: "Session",
@@ -30,6 +31,7 @@ export default class SessionContainer extends Component {
         `}
       >
         {({ loading, error, data }) => {
+          console.log(data);
           if (loading)
             return <ActivityIndicator size="large" color="#9963ea" />;
           if (error) return <Text>{`Error! ${error.message}`}</Text>;

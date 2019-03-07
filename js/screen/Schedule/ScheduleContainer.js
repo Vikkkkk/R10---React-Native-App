@@ -41,12 +41,12 @@ export default class ScheduleContainer extends Component {
       >
         {({ loading, error, data }) => {
           if (loading)
-            return <ActivityIndicator size="large" color="#9963ea" />;
+            return <ActivityIndicator size="large" color="#9963ea" height="100%" />;
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
 
           return (
             <FavesContext.Consumer>
-              {({ favIds, setFavId, removeFavId }) => {
+              {({ favIds }) => {
                 return (
                   <Schedule
                     sessions={formatSessionData(data.allSessions)}
