@@ -18,7 +18,8 @@ const Speaker = props => {
       <View style={styles.xcontainer}>
         <TouchableHighlight
           style={styles.xicon}
-          underlayColor="none"
+          activeOpacity={0}
+          underlayColor={"transparent"}
           onPress={() => {
             props.navigation.goBack();
           }}

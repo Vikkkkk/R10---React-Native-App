@@ -13,6 +13,8 @@ const Faves = props => {
       renderItem={({ item }) => {
         return (
           <TouchableHighlight
+            activeOpacity={0}
+            underlayColor={"transparent"}
             style={styles.touchableHighlight}
             onPress={() => {
               if (!item.speaker) {

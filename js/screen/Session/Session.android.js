@@ -14,7 +14,7 @@ import moment from "moment";
 import LinearGradient from "react-native-linear-gradient";
 import PropTypes from "prop-types";
 
-const Session = () => {
+const Session = props => {
   return (
     <View style={styles.overallContainer}>
       <View style={styles.locationContainer}>
@@ -56,6 +56,8 @@ const Session = () => {
       </View>
 
       <TouchableHighlight
+        activeOpacity={0}
+        underlayColor={"transparent"}
         onPress={() => {
           props.navigation.navigate("Speaker", {
             image: props.item.speaker.image,
