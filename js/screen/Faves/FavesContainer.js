@@ -1,17 +1,24 @@
 import React, { Component } from "react";
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 import { Query } from "react-apollo";
 import Faves from "./Faves";
 import gql from "graphql-tag";
 import FavesContext from "../../context";
 import { formatSessionData } from "../../lib/helpers/dataFormatHelpers";
+import { Directions } from "react-native-gesture-handler";
 
 export default class FavesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-
+  static navigationOptions = {
+    title: "Faves",
+    headerTintColor: "white",
+    headerTitleStyle: {
+      fontSize: 22
+    }
+  };
   render() {
     return (
       <Query
@@ -35,21 +42,41 @@ export default class FavesContainer extends Component {
         `}
       >
         {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator />;
+          if (loading)
+            return <ActivityIndicator size="large" color="#9963ea" />;
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
 
           return (
             <FavesContext.Consumer>
-              {({ favIds, setFavId, removeFavId }) => {
-                let filteredSession = data.allSessions.filter(session => {
-                  return favIds.includes(session.id);
-                });
-                return (
-                  <Faves
-                    sessions={formatSessionData(filteredSession)}
-                    favId={favIds}
-                  />
-                );
+              {({ favIds }) => {
+                if (favIds[0] !== "uuid") {
+                  console.log("faves");
+                  let filteredSession = data.allSessions.filter(session => {
+                    return favIds.includes(session.id);
+                  });
+                  return (
+                    <Faves
+                      sessions={formatSessionData(filteredSession)}
+                      favId={favIds}
+                    />
+                  );
+                } else {
+                  console.log("nofaves");
+                  return (
+                    <View>
+                      <Text
+                        style={{
+                          color: "",
+                          fontSize: 23,
+                          textAlign: "center",
+                          paddingTop: 80
+                        }}
+                      >
+                        There are no Faves Yet 💔
+                      </Text>
+                    </View>
+                  );
+                }
               }}
             </FavesContext.Consumer>
           );
