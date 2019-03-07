@@ -1,6 +1,6 @@
 import React from "react";
-import { View } from "react-native";
-import MapView from "react-native-maps";
+import { View, Text } from "react-native";
+
 import styles from "./styles";
 
 const Maps = () => {
