@@ -33,7 +33,11 @@ export default class SessionContainer extends Component {
         {({ loading, error, data }) => {
           console.log(data);
           if (loading)
-            return <ActivityIndicator size="large" color="#9963ea" />;
+            return (
+              <View style={{ paddingTop: 100 }}>
+                <ActivityIndicator size="large" color="#9963ea" />
+              </View>
+            );
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
 
           return (

@@ -43,7 +43,11 @@ export default class FavesContainer extends Component {
       >
         {({ loading, error, data }) => {
           if (loading)
-            return <ActivityIndicator size="large" color="#9963ea" />;
+            return (
+              <View style={{ paddingTop: 100 }}>
+                <ActivityIndicator size="large" color="#9963ea" />
+              </View>
+            );
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
 
           return (
@@ -66,7 +70,6 @@ export default class FavesContainer extends Component {
                     <View>
                       <Text
                         style={{
-                          color: "",
                           fontSize: 23,
                           textAlign: "center",
                           paddingTop: 80

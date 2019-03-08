@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { View, Text, FlatList, Image, ScrollView } from "react-native";
 import Collapsible from "../../components/Collapsible/Collapsible";
 import styles from "./styles";
@@ -39,7 +39,7 @@ const About = props => {
             keyExtractor={(item, index) => item.id}
           />
         </View>
-        <Text style={styles.copyright}>ⒸDigital Salami 2019</Text>
+        <Text style={styles.copyright}>Ⓒ Digital Salami 2019</Text>
       </ScrollView>
     </View>
   );

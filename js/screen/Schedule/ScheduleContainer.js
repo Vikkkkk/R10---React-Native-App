@@ -41,7 +41,11 @@ export default class ScheduleContainer extends Component {
       >
         {({ loading, error, data }) => {
           if (loading)
-            return <ActivityIndicator size="large" color="#9963ea" height="100%" />;
+            return (
+              <View style={{ paddingTop: 100 }}>
+                <ActivityIndicator size="large" color="#9963ea" />
+              </View>
+            );
           if (error) return <Text>{`Error! ${error.message}`}</Text>;
 
           return (
